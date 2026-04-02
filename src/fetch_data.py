@@ -1,5 +1,5 @@
 import urllib.request as ur
-import urllib.error 
+from urllib.error import HTTPError, URLError
 import json
 import time
 

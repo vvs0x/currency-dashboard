@@ -14,9 +14,3 @@ class Cache(FetchData):
             self._cached_data = super().get_data() 
             self._last_fetch_time = current_time
         return self._cached_data
-
-if __name__ == '__main__':
-    url = 'https://data.snb.ch/api/cube/devkum/data/json/de'
-    b = Cache(url, timeout_seconds=600)
-    data = b.get()
-    print(data)

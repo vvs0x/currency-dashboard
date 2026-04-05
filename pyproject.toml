@@ -7,4 +7,6 @@ requires-python = ">=3.13"
 dependencies = [
     "numpy>=2.4.4",
     "pandas>=3.0.2",
+    "streamlit>=1.56.0",
+    "watchdog>=6.0.0",
 ]

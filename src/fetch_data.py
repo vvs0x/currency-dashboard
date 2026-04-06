@@ -2,6 +2,7 @@ import urllib.request as ur
 from urllib.error import HTTPError, URLError
 import json
 import time
+import ssl
 
 class FetchData:
     def __init__(self, url:str, retries:int = 5):
@@ -11,9 +12,10 @@ class FetchData:
         self._data = None
 
     def get_data(self) -> dict:
+        ctx = ssl._create_unverified_context()
         for attempt in range(self._retries):
             try:
-                self._response = ur.urlopen(self._url)
+                self._response = ur.urlopen(self._url, context=ctx)
                 self._data = json.loads(self._response.read().decode())
                 return self._data
             except HTTPError as e:

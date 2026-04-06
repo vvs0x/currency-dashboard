@@ -64,3 +64,4 @@ htmlcov/
 *.log
 .tmp/
 tmp/
+cache.json
